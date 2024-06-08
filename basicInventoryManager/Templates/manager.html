@@ -1,0 +1,20 @@
+
+<h1>Inventory</h1><hr>
+<h4>Choose an operation:</h4>
+<form method = "post" action = "/edit">
+
+    <input type="radio" id="edit" name="choice" value="edit">
+    <label for="edit">Edit</label><br>
+    <input type="radio" id="del" name="choice" value="del">
+    <label for="del">Delete</label><br>
+
+    <label for = 'name'> Product Name </label><br>
+    <input type="text" id = "name" name = "name" required/><br>
+    <label for = 'count'> Count </label><br>
+    <input type="number" id = "count" name = "count"/><br>
+    <label for = 'price'> Price </label><br>
+    <input type="number" id = "price" name = "price" step="0.1"/><br>
+    <label for = 'category'> Category </label><br>
+    <input type="text" id = "category" name = "category"/><br><br>
+    <input type="submit"/>
+</form><hr>
