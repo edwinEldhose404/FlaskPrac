@@ -19,22 +19,12 @@ def index():
         uemail = request.form['email']
 
         cursor = mysql.connection.cursor()
-        checker = 0
-        for i in cursor:
-            if i.key() == uname and i.value() == uemail:
-                mysql.connection.commit()
-                cursor.close()
-                return f"Already Exists"
-            elif i.key() == uemail:
-                cursor.execute(" UPDATE example1 SET uemail = '%s' WHERE uname = '%s'",(uemail , uname))
-                mysql.connection.commit()
-                cursor.close()
-                return f"Updated!"
-        if checker == 1:
-            cursor.execute(''' INSERT INTO example1 VALUES(%s,%s)''',(uname,uemail))
-            mysql.connection.commit()
-            cursor.close()
-            return f"Done!!"
+        
+        cursor.execute(''' INSERT INTO example1 VALUES(%s,%s)''',(uname,uemail))
+        mysql.connection.commit()
+        cursor.close()
+        return f"Done!!"
+        
     return render_template('index.html')
 
 @app.route('/users')
